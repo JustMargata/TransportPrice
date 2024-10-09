@@ -28,7 +28,7 @@ namespace TransportPrice.Model
             this.Kilometers = kilometers;
             this.DayOrNight = dayOrNight;
         }
-        public double Price()
+        public double CalculatePrice()
         {
             if (this.Kilometers < 20)
             {
