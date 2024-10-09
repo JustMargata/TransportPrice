@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TransportPrice.Model
 {
-    internal class Model
+    internal class Transport
     {
         private int kilometers;
 
@@ -23,7 +23,7 @@ namespace TransportPrice.Model
             set { dayOrNight = value; }
         }
 
-        public Model(int kilometers, string dayOrNight)
+        public Transport(int kilometers, string dayOrNight)
         {
             this.Kilometers = kilometers;
             this.DayOrNight = dayOrNight;
@@ -34,7 +34,7 @@ namespace TransportPrice.Model
             {
                 if (this.DayOrNight == "day")
                 {
-                    return (this.Kilometers * 0.7) + 0.7;
+                    return (this.Kilometers * 0.79) + 0.7;
                 }
                 else
                 {

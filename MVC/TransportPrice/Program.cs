@@ -1,10 +1,12 @@
-﻿namespace TransportPrice
+﻿using TransportPrice.Controller;
+
+namespace TransportPrice
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            TransportActionController myController = new TransportActionController();
         }
     }
 }

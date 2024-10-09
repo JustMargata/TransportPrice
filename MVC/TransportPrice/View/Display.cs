@@ -18,7 +18,7 @@ namespace TransportPrice.View
         }
         public void Output() 
         {
-            Console.WriteLine(this.Price);
+            Console.WriteLine($"{this.Price:F2}");
         }
     }
 }
