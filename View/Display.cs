@@ -16,7 +16,7 @@ namespace TransportPrice.View
             this.Kilometers = int.Parse(Console.ReadLine());
             this.DayOrNight = Console.ReadLine();
         }
-        public void Output() 
+        public void Output()
         {
             Console.WriteLine($"{this.Price:F2}");
         }

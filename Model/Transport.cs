@@ -8,25 +8,28 @@ namespace TransportPrice.Model
 {
     internal class Transport
     {
-        private int kilometers;
+        private double taxiDayFee = 0.79;
+        private double taxiNightFee = 0.9;
+        private double taxiStartFee = 0.7;
+        private double busFee = 0.09;
+        private double trainFee = 0.06;
 
+        private int kilometers;
         public int Kilometers
         {
             get { return kilometers; }
             set { kilometers = value; }
         }
         private string dayOrNight;
-
         public string DayOrNight
         {
             get { return dayOrNight; }
             set { dayOrNight = value; }
         }
-        public double TaxiDayFee { get; set; } = 0.79;
-        public double TaxiNightFee { get; set; } = 0.9;
-        public double TaxiStartFee { get; set; } = 0.7;
-        public double BusFee { get; set; } = 0.09;
-        public double TrainFee { get; set; } = 0.06;
+        public Transport()
+        {
+
+        }
         public Transport(int kilometers, string dayOrNight)
         {
             this.Kilometers = kilometers;
@@ -38,20 +41,20 @@ namespace TransportPrice.Model
             {
                 if (this.DayOrNight == "day")
                 {
-                    return (this.Kilometers * TaxiDayFee) + TaxiStartFee;
+                    return (this.Kilometers * taxiDayFee) + taxiStartFee;
                 }
                 else
                 {
-                    return (this.Kilometers * TaxiNightFee) + TaxiStartFee;
+                    return (this.Kilometers * taxiNightFee) + taxiStartFee;
                 }
             }
             else if (this.Kilometers >= 20 && this.Kilometers < 100)
             {
-                return this.Kilometers * BusFee;
+                return this.Kilometers * busFee;
             }
             else
             {
-                return this.Kilometers * TrainFee;
+                return this.Kilometers * trainFee;
             }
 
         }

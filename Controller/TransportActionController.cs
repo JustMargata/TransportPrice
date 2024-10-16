@@ -10,15 +10,21 @@ namespace TransportPrice.Controller
 {
     internal class TransportActionController
     {
-        Display Display = new Display();
-        Transport Transport;
+        Display displayche = new Display();
+        Transport modelche = new Transport();
 
         public TransportActionController()
         {
-            Display.Input();
-            Transport = new Transport(Display.Kilometers, Display.DayOrNight);
-            Display.Price = Transport.CalculatePrice();
-            Display.Output();
+
+        }
+
+        public void Start()
+        {
+            displayche.Input();
+            modelche.DayOrNight = displayche.DayOrNight;
+            modelche.Kilometers = displayche.Kilometers;
+            displayche.Price = modelche.CalculatePrice();
+            displayche.Output();
         }
     }
 }
